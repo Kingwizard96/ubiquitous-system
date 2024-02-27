@@ -1,58 +1,70 @@
 import React, { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css'; 
-import firstSlideImage from "/images/full.png";
-import secondSlideImage from "/images/jar.png";
-import thirdSlideImage from "/images/raw.png";
+import './index.css';
 
-export default function App() {
-  const [isPaused, setIsPaused] = useState(false);
+export default function App () {
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+  
   return (
-    <Carousel 
-      prevLabel="Previous" 
-      nextLabel="Next" 
-      pause="hover"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <Carousel.Item>
-        <img src={firstSlideImage} alt="First slide" className="carousel-image" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-        {isPaused && (
-          <div className="pause-button" onClick={() => setIsPaused(false)}>
-            <button>Pause</button>
+   
+    <nav className="bg-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex-shrink-0">
+            <img className="h-10 w-auto" src="./images/logo.png" alt="Buddiibox the ultimate stashbox" />
           </div>
-        )}
-      </Carousel.Item>
-      <Carousel.Item>
-        <img src={secondSlideImage} alt="Second slide" className="carousel-image" />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-        {isPaused && (
-          <div className="pause-button" onClick={() => setIsPaused(false)}>
-            <button>Pause</button>
+          <div className="hidden md:block">
+            <div className="ml-12 flex items-baseline space-x-4">
+              <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+              <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+              <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+              <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+            </div>
           </div>
-        )}
-      </Carousel.Item>
-      <Carousel.Item>
-        <img src={thirdSlideImage} alt="Third slide" className="carousel-image" />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-        </Carousel.Caption>
-        {isPaused && (
-          <div className="pause-button" onClick={() => setIsPaused(false)}>
-            <button>Pause</button>
+          <div className="hidden md:block">
+            <div className="ml-4 flex items-center md:ml-6">
+              <button className="bg-red-700 text-gray-300 border-2 border-gray-300 px-2 py-2 rounded-md text-sm font-medium">Sign in</button>
+              <button className="ml-4 bg-gray-800 text-gray-300 border-2 border-gray-300 px-2 py-2 rounded-md text-sm font-medium">Sign up</button>
+            </div>
           </div>
-        )}
-      </Carousel.Item>
-    </Carousel>
+          <div className="-mr-2 flex md:hidden">
+            <button onClick={toggleMenu} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              {isOpen ? (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {isOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+          </div>
+          <div className="pt-4 pb-3 border-t border-gray-700">
+            <div className="px-2 space-y-1">
+              <button className="bg-red-700 text-white block w-full px-4 py-2 rounded-md text-base font-medium">Sign in</button>
+              <button className="mt-2 bg-transparent text-gray-300 border-2 border-gray-300 block w-full px-4 py-2 rounded-md text-base font-medium">Sign up</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </nav>
+   
   );
-}
+};
+
+

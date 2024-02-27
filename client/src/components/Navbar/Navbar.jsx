@@ -7,9 +7,7 @@ export default function Navbar () {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  // written in tailwindcss, but not working properly might change to bootstrap
-  // having padding issues with the nav bar when in transition from mobile to desktop
-
+  
   return (
    
     <nav className="bg-gray-800">
@@ -28,8 +26,8 @@ export default function Navbar () {
           </div>
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6">
-              <button className="bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign in</button>
-              <button className="ml-4 bg-transparent text-gray-300 border-2 border-gray-300 px-4 py-2 rounded-md text-sm font-medium">Sign up</button>
+              <button className="bg-red-700 text-gray-300 border-2 border-gray-300 px-2 py-2 rounded-md text-sm font-medium">Sign in</button>
+              <button className="ml-4 bg-gray-800 text-gray-300 border-2 border-gray-300 px-2 py-2 rounded-md text-sm font-medium">Sign up</button>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">

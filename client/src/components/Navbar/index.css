@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Navbar CSS */
+.navbar {
+  background-color: #1f2937; /* Adjust background color as needed */
+}
+
+.navbar-logo {
+  height: 40px; /* Adjust logo height as needed */
+}
+
+.navbar-link {
+  color: #d1d5db; /* Adjust link color as needed */
+}
+
+.navbar-link:hover {
+  background-color: #374151; /* Adjust hover background color as needed */
+}
+
+.navbar-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.navbar-button-signin {
+  background-color: #ef4444; /* Adjust sign-in button color as needed */
+  color: #fff; /* Adjust sign-in button text color as needed */
+}
+
+.navbar-button-signup {
+  background-color: transparent;
+  border: 1px solid #d1d5db; /* Adjust sign-up button border color as needed */
+  color: #d1d5db; /* Adjust sign-up button text color as needed */
+}
+
+.navbar-button-signup:hover {
+  background-color: #d1d5db; /* Adjust sign-up button hover background color as needed */
+  color: #1f2937; /* Adjust sign-up button hover text color as needed */
+}
+
+.navbar-menu {
+  display: none; /* Hide menu by default */
+}
+
+.navbar-menu.active {
+  display: block; /* Display menu when active */
+}
