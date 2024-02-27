@@ -5,7 +5,7 @@ type Mutation {
   addOrder(products: [ID]!): Order
   updateUser(username: String, email: String, password: String): User
   updateProduct(_id: ID!, quantity: Int!): Product
-  login(username: String!, password: String!): Auth 
+  login(email: String!, password: String!): Auth 
 }
 
 type Query {

@@ -114,8 +114,8 @@ Mutation:{
     return await Product.findByIdAndUpdate(_id,  {
       $inc: { quantity: decrement } }, { new: true});
 }, 
-login: async ( parent, { username, password }) => {
-  const user = await User.findOne({username});
+login: async ( parent, { email, password }) => {
+  const user = await User.findOne({email});
   
   if (!user) {
     throw AuthenticationError;

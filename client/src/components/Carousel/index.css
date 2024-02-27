@@ -1,4 +1,3 @@
-/* Written using react bootstrap  */
 .carousel-control-next,
 .carousel-control-prev {
   align-items: center;
@@ -60,25 +59,4 @@
 .carousel{
   overflow: hidden;
   background-color: black;
-}
-
-
-.pause-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-}
-
-.pause-button button {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.pause-button button:hover {
-  background-color: rgba(255, 255, 255, 0.8);
 }
