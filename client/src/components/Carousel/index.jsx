@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css'; // Assuming you have your custom CSS file for styles
+import './index.css'; 
 import firstSlideImage from "/images/full.png";
 import secondSlideImage from "/images/jar.png";
 import thirdSlideImage from "/images/raw.png";
 
-export default function App() {
+export default function Carousel() {
   const [isPaused, setIsPaused] = useState(false);
 
   const handlePause = () => {

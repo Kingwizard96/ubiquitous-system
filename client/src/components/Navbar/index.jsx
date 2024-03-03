@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './index.css';
 
+// written in jsx and tailwindcss
 export default function Navbar () {
   const [isOpen, setIsOpen] = useState(false);
 
