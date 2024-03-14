@@ -6,18 +6,29 @@ import firstSlideImage from "/images/full.png";
 import secondSlideImage from "/images/jar.png";
 import thirdSlideImage from "/images/raw.png";
 
-export default function Carousel() {
+export default function CustomCarousel() {
   const [isPaused, setIsPaused] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePause = () => {
     setIsPaused(!isPaused);
   };
 
+  const handleSelect = (selectedIndex, e) => {
+    if (isPaused) {
+      // Prevent auto sliding when paused
+      return;
+    }
+    setActiveIndex(selectedIndex);
+  };
+
   return (
     <Carousel 
+      activeIndex={activeIndex}
+      onSelect={handleSelect}
       prevLabel="Previous" 
       nextLabel="Next" 
-      pause={isPaused ? "hover" : false} 
+      interval={isPaused ? null : 3000} // Set interval to null when paused
     >
       <Carousel.Item>
         <div className="image-container">

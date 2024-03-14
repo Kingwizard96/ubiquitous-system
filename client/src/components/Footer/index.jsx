@@ -3,7 +3,8 @@ import './index.css';
 
 export default function Footer() {
   return (
-    <footer className="py-3 bg-slate-950 text-white fixed bottom-0 w-full">
+    <>
+    <footer className="py-3 bg-transparent text-white unset bottom-0 w-full">
       <div className="container">
         <div className="row">
           <div className="col-6 col-md-3 mb-3">
@@ -53,5 +54,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

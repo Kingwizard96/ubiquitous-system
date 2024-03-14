@@ -47,7 +47,7 @@
   flex-direction: column; /* Ensure text appears below the image */
   align-items: center;
   text-align: center; /* Center align text */
-  background-color: black;
+  background-color: transparent;
   opacity: 1;
   }
 
@@ -61,7 +61,7 @@
 
 .carousel{
   overflow: hidden;
-  background-color: black;
+  background-color: transparent;
 }
 /* Your existing CSS styles */
 

@@ -1,16 +1,23 @@
 import React from 'react';
 import './index.css';
+import CustomCarousel from './components/Carousel';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+
 
 export default function HeroSection() {
   return (
-    <div className="bg-transparent">
-      <div className="container mx-auto py-12 lg:flex lg:justify-between">
+    <>
+    <Navbar />
+  <div className="bg-transparent">
+      <div className="container mx-auto py-12 lg:flex md:justify-between">
         {/* Large image on the left */}
-        <div className="lg:w-1/9 ">
-          <img className="w-full h-auto lg:h-full lg:w-auto object-cover" src="//media.tiffany.com/is/image/tiffanydm/HOLIDAY-Hero-Desktop?$tile$&amp;wid=2992" alt="Tiffany HardWear" />
-        </div>
+        <div className="lg:w-1/9 flex justify-center items-center" id="hero">
+        <img className="" src="/images/loading.png" alt="Tiffany HardWear" />
+      </div>
+      {/* this is written using tailwind */}
         {/* Text and button on the right */}
-        <div className="lg:w-1/2 flex items-center justify-center p-6">
+        <div className="lg:w-2/3 flex items-center justify-center p-6">
           <div className="text-center">
             <h1 className="text-3xl lg:text-5xl font-bold mb-4">Tiffany HardWear</h1>
             <p className="mb-8">Inspired by a bracelet from 1971 found in the House’s archive, the Tiffany HardWear collection features bold designs that play with tension, proportion, and balance.</p>
@@ -19,6 +26,14 @@ export default function HeroSection() {
         </div>
       </div>
     </div>
-  );
+    <br />
+    <div className="App">
+    <CustomCarousel />
+    {/* Other components and content */}
+  </div>
+
+  <Footer />
+  </>
+);
 }
 
