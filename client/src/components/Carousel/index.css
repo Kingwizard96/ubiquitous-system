@@ -35,8 +35,8 @@
 }
 
 .carousel-image {
-  width: 500px;
-  height: 400px;
+  width: 600px;
+  height: 500px;
   max-width: 100%;
   display: block;
   backface-visibility: hidden;

@@ -4,6 +4,7 @@ import CustomCarousel from './components/Carousel';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 
+ {/* this is written using tailwind */}
 
 export default function HeroSection() {
   return (
@@ -13,9 +14,8 @@ export default function HeroSection() {
       <div className="container mx-auto py-12 lg:flex md:justify-between">
         {/* Large image on the left */}
         <div className="lg:w-1/9 flex justify-center items-center" id="hero">
-        <img className="" src="/images/loading.png" alt="Tiffany HardWear" />
+        <img className="" src="/images/loading.png" alt="product image" />
       </div>
-      {/* this is written using tailwind */}
         {/* Text and button on the right */}
         <div className="lg:w-2/3 flex items-center justify-center p-6">
           <div className="text-center">
