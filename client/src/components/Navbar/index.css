@@ -8,8 +8,9 @@
   background-color: #1f2937; /* Adjust background color as needed */
 }
 
-.navbar-logo {
-  height: 40px; /* Adjust logo height as needed */
+#fuego { /* Adjust logo height as needed */
+
+  margin-top: 20%;
 }
 
 .navbar-link {

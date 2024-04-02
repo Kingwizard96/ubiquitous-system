@@ -13,12 +13,6 @@
    align-items: center; 
 }
 
-body {
-  background-image: url(/images/background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 #companyName{
   font-family: fantasy;
   color:whitesmoke;
@@ -30,8 +24,3 @@ body {
 p{
   color:whitesmoke;
 }
-
-/* #notification{
-  background-color: aqua;
-} */
-
