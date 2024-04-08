@@ -1,0 +1,25 @@
+#refund-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 04%;
+    background-color: #f1f3f5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  #refund-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: fantasy;
+  }
+  
+  .refund-item {
+    margin-bottom: 30px;
+  }
+  
+  .section {
+    margin-bottom: 20px; /* Adjust spacing as needed */
+  } 
+  
+ 

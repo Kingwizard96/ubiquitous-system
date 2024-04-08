@@ -7,6 +7,8 @@ const Notification = () => {
 
   const handleClose = () => setShow(false);
 
+  // without carousel component close button will not display correctly
+  
   return (
     <div className="text-center" id='notification' >
       {show && (

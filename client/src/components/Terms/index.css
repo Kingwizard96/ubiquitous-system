@@ -1,0 +1,27 @@
+/* TermsOfService/index.css */
+#tos-container {
+    /* Your styles for the TOS container */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 04%;
+    background-color: #f1f3f5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  #tos-heading {
+    /* Your styles for the TOS heading */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: fantasy;
+  }
+  
+  .tos-section {
+    /* Your styles for TOS sections */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+  
+  /* Add more styles as needed */

@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
- #hero   {
-   background-color :  #f1f3f5 ;
-   padding :  2rem ;
-   margin-bottom :  2rem ;
-   border-radius :  0.5rem ;
-   box-shadow :  0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) ;
-   display: flex;
-   justify-content: center;
-   align-items: center; 
-}
 
 body {
   background-image: url(/images/background.png);
@@ -19,19 +9,98 @@ body {
   background-size: cover;
 }
 
-#companyName{
+/* contact form css */
+
+#contactUs{
+  background-color: #f1f3f5;
+  padding: 20px;
+  width: 70%;
+  margin: 0 auto;
+  font-size: x-large;
   font-family: fantasy;
-  color:whitesmoke;
-  background: #7e0a0a;
-  padding-top: 18px;
-  padding-bottom: 0px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-p{
-  color:whitesmoke;
+/* Add some padding and margin to the container */
+#contact-container {
+  padding: 20px;
+  margin-top: 10px;
 }
 
-/* #notification{
-  background-color: aqua;
-} */
+/* Center align the form */
+#contact-form {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Style the input fields */
+#message {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the contact button */
+#contact-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+#contact-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Style the success message */
+.text-success {
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Style error messages */
+.validation-error {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+
+
+#about-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 04%;
+  background-color: #f1f3f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+#about-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: fantasy;
+}
+
+#story {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+
+
 

@@ -1,101 +1,100 @@
 import React, { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
+// Reusable input component
+const InputField = ({ id, label, type, value, onChange, placeholder, required = false }) => (
+  <div className="mb-3">
+    <label htmlFor={id} className="form-label">
+      {label}:
+    </label>
+    <input
+      type={type}
+      className="form-control"
+      id={id}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      required={required}
+    />
+  </div>
+);
+
 export default function Contact() {
-    const [state, handleSubmit] = useForm("xbjnzwky");
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [company, setCompany] = useState('');
+  const [state, handleSubmit] = useForm("xbjnzwky");
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
 
-    const handleLocalSubmit = (e) => {
-        e.preventDefault();
-        console.log('submitting form',{email, message, name, phone, company});
-    };
+  const handleLocalSubmit = (e) => {
+    e.preventDefault();
+    // Add your logic to handle form submission locally
+    console.log('Form submitted locally:', formData);
+    // You can add further local actions if needed
+  };
 
-    return (
-        <div className="flex justify-center items-center bg-gray-100 py-12">
-            <div className="w-full max-w-md">
-                <form onSubmit={state.submitWithRedirect || handleLocalSubmit}>
-                    <div className="mb-4">
-                        <label htmlFor="name" className='form-label'>
-                            Your Name:
-                        </label>
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            className='form-input'
-                            />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="email" className='form-label'>
-                            Your Email:
-                        </label>
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className='form-input'
-                            />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="phone" className='form-label'>
-                            Your Phone:
-                        </label>
-                        <input
-                            type="text"
-                            name="phone"
-                            id="phone"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
-                            className='form-input'
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="company" className='form-label'>
-                            Your Company:
-                        </label>
-                        <input
-                            type="text"
-                            name="company"
-                            id="company"
-                            value={company}
-                            onChange={(e) => setCompany(e.target.value)}
-                            className='form-input'
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="message" className='form-label'>
-                            Your Message:
-                        </label>
-                        <textarea
-                            name="message"
-                            id="message"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            className='form-input'
-                        />
-                    </div>
-                   
-                    <button type="submit" className='btn btn-primary' disabled={state.submitting}>{state.submitting ? 'submitting...' : 'submit'}
-                    </button>
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-                {state.succeeded && <p>Thanks for reaching out!</p>}
-
-                <ValidationError
-                    prefix="Email"
-                    field="email"
-                    errors={state.errors}
-                />
-                </form>
-            </div>
+  return (
+    <div id='contact-container' className="container mt-5">
+      <h1 id='contactUs' className="text-center">Contact Us</h1>
+      <p className="text-center">We'd love to hear from you! Drop us a message below.</p>
+      <form id='contact-form'className='form' onSubmit={state.submitWithRedirect || handleLocalSubmit}>
+        <InputField
+          id="name"
+          label="Your Name"
+          type="text"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder="Enter your name"
+          required
+        />
+        <InputField
+          id="email"
+          label="Your Email"
+          type="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Enter your email"
+          required
+        />
+        <InputField
+          id="phone"
+          label="Your Phone Number"
+          type="tel"
+          value={formData.phone}
+          onChange={handleChange}
+          placeholder="Enter your phone number"
+        />
+        <div className="mb-3">
+          <label htmlFor="message" className="form-label">
+            Message:
+          </label>
+          <textarea
+            className="form-control"
+            id="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Write your message here"
+            required
+          ></textarea>
         </div>
-    );
+        <button type="submit" id='contact-btn' className="btn btn-primary" disabled={state.submitting}>
+          {state.submitting ? 'Submitting...' : 'Submit'}
+        </button>
+        {state.succeeded && <p className="text-success">Thanks for reaching out!</p>}
+        <ValidationError 
+          prefix="Form submission" 
+          field="general"
+          errors={state.errors}
+        />
+        <br />
+      </form>
+    </div>
+  );
 }
-    
