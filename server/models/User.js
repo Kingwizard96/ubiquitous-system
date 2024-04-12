@@ -19,8 +19,8 @@ const userSchema = new Schema({
     password: {
         type: String,
         require: true,
-        minlength: 8
-    },
+        minlength: 8,
+        match: [/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-?:$]).{8,}/, 'Password must contain at least one uppercase letter, one lowercase letter, one symbol (-?:$), and one number']    },
     orders: [Order.schema]
 });
 

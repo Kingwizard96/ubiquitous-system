@@ -11,6 +11,7 @@ const productSchema = new Schema({
     price: {
         type: Number,
         required: true,
+        min: 0.99
     },
     description: {
         type: String    
@@ -27,6 +28,16 @@ const productSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Category',
         required: true
+    },
+    // add a design field to the product schema
+    // enumerate available designs
+    design: {
+        name: String,
+        image: String
+    },
+    // grinder color
+    grinder:{
+        color: { type:String}
     }
 });
 

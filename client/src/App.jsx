@@ -12,11 +12,13 @@ import Notification from './components/Notification';
 // import Shipping from './components/Shipping';
 // import About from './pages/About';
 
+
 export default function App() {
   return (
     <>
     <Notification />
     <Navbar />
+    
     {/* <Contact /> */}
     {/* <Hero /> */}
     {/* <FAQ /> */}
