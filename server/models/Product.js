@@ -37,7 +37,7 @@ const productSchema = new Schema({
     },
     // grinder color
     grinder:{
-        color: { type:String}
+        color: [{ type:String}]
     }
 });
 

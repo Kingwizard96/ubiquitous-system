@@ -58,19 +58,19 @@ db.once('open', async () => {
         {
             username: 'testUser',
             email: 'email@testemail.com',
-            password: 'password123?',
+            password: 'Password123?',
             products: [products[0]._id, products[1]._id] // Jar and BuddiiBox Go
         },
         {
             username: 'testUser2',
             email: 'email@emailtest.net',
-            password: 'password132?',
+            password: 'Password132?',
             products: [products[0]._id, products[2]._id] // Jar and BuddiiBox Pro
         },
         {
             username: 'testUser3',
             email: 'email3@testemail.com',
-            password: 'password12?3',
+            password: 'Password12?3',
             products: [products[0]._id] // Only Jar
         }
     ];

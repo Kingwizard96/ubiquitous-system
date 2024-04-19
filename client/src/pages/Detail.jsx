@@ -11,11 +11,10 @@ import {
     UPDATE_PRODUCTS,
     } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
-import { QUERY_PRODUCTS } from "../utils/queries";
 import spinner from '../assets/going.gif';
 
 
-export default function Detail() {
+function Detail() {
     const [state, dispatch] = useStoreContext();
     const { id } = useParams();
 
@@ -114,3 +113,5 @@ export default function Detail() {
         </>
     );
 }
+
+export default Detail;

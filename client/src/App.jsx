@@ -1,36 +1,45 @@
-import React from 'react';
-import './index.css';
-import CustomCarousel from './components/Carousel';
+import { Outlet } from 'react-router-dom';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import Notification from './components/Notification';
-// import Hero from './components/Hero';
-// import FAQ from './components/FAQ';
-// import Terms from './components/Terms';
-// import Contact from './pages/Contact';
-// import Refund from './components/Refund';
-// import Shipping from './components/Shipping';
-// import About from './pages/About';
 
+import Nav from './components/Navbar';
+import { StoreProvider } from './utils/GlobalState';
 
-export default function App() {
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
+function App() {
   return (
-    <>
-    <Notification />
-    <Navbar />
-    
-    {/* <Contact /> */}
-    {/* <Hero /> */}
-    {/* <FAQ /> */}
-    {/* <Refund /> */}
-    {/* <Terms /> */}
-    {/* <CustomCarousel /> */}
-    {/* Other components and content */}
-    {/* <Shipping /> */}
-    {/* <About /> */}
-  
-  <Footer />
-  </>
-);
+    <ApolloProvider client={client}>
+      <StoreProvider>
+        <Nav />
+        <Outlet />
+        < Footer />
+      </StoreProvider>
+    </ApolloProvider>
+  );
 }
 
+export default App;

@@ -7,20 +7,21 @@ const Order = require('./Order');
 const userSchema = new Schema({
     username: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         unique: true,
         match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
     },
     password: {
         type: String,
-        require: true,
+        required: true,
         minlength: 8,
-        match: [/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-?:$]).{8,}/, 'Password must contain at least one uppercase letter, one lowercase letter, one symbol (-?:$), and one number']    },
+        match: [/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-?:$]).{8,}/, 'Password must contain at least one uppercase letter, one lowercase letter, one symbol (-?:$), and one number']
+    },
     orders: [Order.schema]
 });
 
